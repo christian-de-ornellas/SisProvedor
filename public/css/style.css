@@ -1,0 +1,302 @@
+/*
+Aqui onde fica armazenada toda a estilização do painel principal
+*/
+/* 
+    Created on : 24/04/2016, 00:44:37
+    Author     : Christian
+*/
+/*RESET*/
+
+*, *:before, *:after{
+    margin: 0;
+    padding: 0;
+    font-size: 1em;
+    font-weight: 400;
+    line-height: 1.2;
+    letter-spacing: 0em;    
+    box-sizing: border-box;
+    moz-box-sizing: border-box;
+    webkit-box-sizing: border-box;
+}
+html, body{
+    /* background-image: linear-gradient(to top, #eee,#ddd,#f2f2f2,#f2f2f2); */
+    background: #f2f2f2;
+    height: 100%;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+/*BOX*/
+.container{float:left; width: 100%;}
+.content{display: block; margin: 0 auto; padding: 6% 1%;  width: 100%; max-width: 75.000em;}
+.clear{clear: both;}
+/*Topo*/
+.main_header{
+    display: block;
+    position: fixed;
+    z-index: 1000;
+    float: left;
+    width: 100%;
+    top: 0;
+    background-color: #2b3b4b;
+    padding: 8px 5px;    
+    border-bottom: 3px #1b2938 solid;  
+}
+.main_header img{
+    width: 11em;   
+    margin-left: 0.4em;
+}
+/* Menu do topo */
+.main_menu{
+    float: right;
+    line-height: 1.616em;
+}
+.main_menu li{
+    display: inline-block;
+}
+.main_menu a{
+    display: inline-block;
+    padding: 0px 15px;
+    color: #fdfdfd;
+}
+.main_menu a:hover{
+    color:  #e95420;
+}
+/*Menu Lateral*/
+.main_menu_left{
+    background-color: #2c3e50;
+    float: left;    
+    padding: 0;
+    margin: 0;
+    color: #fdfdfd;
+    width: 15%; 
+    left: 0;
+    top: 50px;
+    z-index: 1000;
+    display: block;
+    position: fixed;
+    height: 100%;
+    max-height: 100%;
+}
+.main_menu_left img{
+    width: 90px!important;
+    height: 90px;
+    border-radius: 100%; 
+    border: solid 4px #2b3b4b;
+}
+.main_menu_left img:hover{
+    border: solid 2px #1b2938;
+    transition: all linear 3s;
+    cursor: pointer;
+}
+/*Perfil com foto e apresentação*/
+.perfil{padding: 10px 10px;  text-align: center;}
+.main_perfil{background-color: #182939; padding: 14px 15px; text-align: center;}
+/*Menu lateral*/
+.main_menu_left ul{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border-bottom: 1px solid #1b2938!important;
+}
+.main_menu_left ul li {
+    position: relative;
+}
+.main_menu_left li ul {
+    position: absolute;
+    left: 12.250em;
+    top: 0;
+    display: none;
+}
+.main_menu_left ul li a {
+    display: block;
+    text-decoration: none;
+    color: #f2f2f2;
+    background: #2c3e50;
+    padding: 0.5em;
+    border: 1px solid #1b2938;
+    border-bottom: 0;
+}
+.main_menu_left ul li a:hover {background: #1b2938; transition: all linear 1s;}
+.main_menu_left ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    width: 100%;
+    border-bottom: 1px solid #ccc;
+}
+.main_menu_left li:hover ul { display: block;}
+.main_menu_left li:hover ul, li.over ul { 
+    display: block; 
+}
+/*rodape*/
+.main_footer .content{
+    width:85%;
+    float: right; 
+    color: #888;
+    text-align: center;
+    font-size: 14px;
+    position: relative;
+    margin: 0!important;
+    padding: 0!important;
+}
+/*PAINEL DASHBOARD TELA PRINCIPAL*/
+.main{ 
+    float: right; 
+    width: 85%; 
+}
+/*DASHBOARD PAINEL*/
+.main_dashboard{
+    width: 400px; 
+    height: 150px; 
+    margin-top: 1em;
+    margin-right: 2em; 
+    margin-bottom: 1em; 
+    padding: 1em 1em; 
+    float: left; 
+}
+.main_dashboard h1{ color: #fff;}
+.main_dashboard h2{ color: #f2f2f2;}
+.main_dashboard .fa-big{color:rgba(224, 224, 224, 0.2); float: right; font-size: 80px!important; }
+
+/* GUIA DE ACESSO'RÁPIDO */
+.main_guia{
+    border: 3px #2c3e50 solid;
+    height: 150px;
+    width: 92%;
+    float: left;
+    color: #fff!important;
+}
+.main_guia header{width: 22%; padding: 0.3em 0.3em;}
+.main_guia ul li a{
+    display: inline-block;
+    color: #d35400;
+    text-decoration: none;
+    float: left;
+    line-height:200%;
+    margin-right: 0.4em;
+    padding-top: 1.5em;
+    padding-left: 0.5em; 
+}
+.main_guia ul li a:hover{
+    color: #e67e22;
+}
+.fa-big{ font-size: 40px!important;}
+
+/*CREATE PANEL*/
+.main_panel{
+    background-color:#fff;
+}
+/*table panel*/
+.main_panel table{
+    width: 100%;
+    background-color: #ccc;
+    padding: 0.2em;
+    text-align: center;
+    text-transform: uppercase;
+    color: #666;   
+}
+.main_panel  tr  th{
+    background-color: #f2f2f2;
+    padding: 0.5em;
+    font-weight: 700;     
+}
+.main_panel  tr  td{
+    background-color: #fff;
+    padding: 0.5em;
+}
+.main_panel label{
+    display: inline-table; 
+}
+.main_panel input{
+    border: 2px #ccc  solid;
+    background-color: #f2f2f2; 
+    font-weight: 400;
+    color: #2b3b4b;
+    text-transform:  capitalize;
+}
+.main_panel input:hover{
+    transition: all linear 1s;
+    border: 2px solid #999;
+    background-color: #fff;
+}
+.main_panel select{
+    border: 2px #ccc  solid;
+    background-color: #f2f2f2; 
+    font-weight: 400;
+    color: #2b3b4b;
+    text-transform:  capitalize;
+}
+.main_panel select:hover{
+    transition: all linear 1s;
+    border: 2px solid #999;
+    background-color: #fff;
+}
+.main_panel button{
+    border:none;
+    padding: 1em;
+    background-color: #2c3e50;
+    color: #f2f2f2!important;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+.main_panel button:hover{
+    background-color:#34495e;
+    cursor: pointer;
+    transition: all linear 1s;
+}
+.main_panel header{
+    background-image: linear-gradient( to top, #fff,#eee,#ddd,#ccc);
+    color:#34495e!important;
+    padding: 0.5em;
+    margin-bottom: 0.5em;
+    text-transform: uppercase;
+    font-weight: 700!important;
+}
+.main_panel footer{
+    color: #ecf0f1!important;
+    padding: 0.5em;
+    margin-top: 0.5em;
+    text-align: right;
+}
+/*JQUERY UI*/
+.ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active, a.ui-button:active, .ui-button:active, .ui-button.ui-state-active:hover {
+    border: none!important;
+    background: #2c3e50!important;
+    font-weight: normal;
+    color: #fff;
+}
+
+.ui-widget-header {
+    border:none!important;
+    border-bottom: 1px solid #ddd!important;
+    background: #fff!important;
+    color: #333;
+    font-weight: bold;
+}
+.ui-tabs {
+    position: relative;
+    padding: 0!important; 
+    border:none!important;
+}
+
+.itens{
+    overflow-y: scroll;
+    height: 150px;
+}
+/*GUIA DE ACESSO RÁPIDO*/
+.acesso-rapido header{
+    margin-bottom: 2em;
+}
+.acesso-rapido ul li{
+    text-align: center;
+    display: inline-block;
+    margin-right: 2%;
+}
+.acesso-rapido ul li a{
+    color: #34495e!important;
+}
+.acesso-rapido ul li a:hover{
+    color: #2c3e50!important;
+    transition: all linear 0.2s;
+}
