@@ -1,13 +1,19 @@
-/* 
- Christian de Ornellas Adicionando o Javascript
+/*  
+ *  ###########################################################
+ *  ARQUIVOS JAVASCRITCP Adicionado por: Christian de Ornellas
+ *  ###########################################################
+ */
+    var $b = jQuery.noConflict();
+/*  
+ *  ###########################################################
+ *                         MASCARA JS
+ *  ###########################################################
  */
 
-/*MASCARAS PARA CPF, RG, TEL E CEL Podendo-se adicionar outros campos*/
-// <![CDATA[
 jQuery(function ($) {
-    $.mask.definitions['~'] = '[+-]';
+    $b.mask.definitions['~'] = '[+-]';
     //Inicio Mascara Telefone
-    $('input[type=tel]').mask("(99) 9999-9999?9").ready(function (event) {
+    $b('input[type=tel]').mask("(99) 9999-99999").ready(function (event) {
         var target, phone, element;
         target = (event.currentTarget) ? event.currentTarget : event.srcElement;
         phone = target.value.replace(/\D/g, '');
@@ -20,15 +26,17 @@ jQuery(function ($) {
         }
     });
     //Fim Mascara Telefone
-    $("#cpf").mask("999.999.999-99");
-    $("#cnpj").mask("999999/999-99");
-    $("#rg").mask("99.999.999-*");
-    $("#nasc").mask("99/99/9999");
+    $b("#cpf").mask("999.999.999-99");
+    $b("#cnpj").mask("999999/999-99");
+    $b("#rg").mask("99.999.999-*");
+    $b("#nasc").mask("99/99/9999");
 });
-// ]]>
 
-/*BUSCANDO ENDEREÇO POR CEP*/
-
+/*  
+ *  ###########################################################
+ *                  BUSCANDO ENDEREÇO POR CEP
+ *  ###########################################################
+ */
 function limpa_formulário_cep() {
     //Limpa valores do formulário de cep.
     document.getElementById('rua').value = ("");
@@ -97,161 +105,12 @@ function pesquisacep(valor) {
     }
 }
 ;
-/*FIM BUSCANDO ENDEREÇO POR CEP*/
 
-/*JQUERY UI*/
-$(function () {
-    $("#tabs").tabs();
-});
-
-$(function () {
-    $("input").checkboxradio();
-});
-
-$(function () {
-    $("#dialog").dialog({
-        autoOpen: false,
-        show: {
-            effect: "blind",
-            duration: 1000
-        },
-        hide: {
-            effect: "explode",
-            duration: 1000
-        }
-    });
-
-    $("#opener").on("click", function () {
-        $("#dialog").dialog("open");
-    });
-});
-$("#accordion").accordion();
-
-
-
-var availableTags = [
-    "ActionScript",
-    "AppleScript",
-    "Asp",
-    "BASIC",
-    "C",
-    "C++",
-    "Clojure",
-    "COBOL",
-    "ColdFusion",
-    "Erlang",
-    "Fortran",
-    "Groovy",
-    "Haskell",
-    "Java",
-    "JavaScript",
-    "Lisp",
-    "Perl",
-    "PHP",
-    "Python",
-    "Ruby",
-    "Scala",
-    "Scheme"
-];
-$("#autocomplete").autocomplete({
-    source: availableTags
-});
-
-
-
-$("#button").button();
-$("#button-icon").button({
-    icon: "ui-icon-gear",
-    showLabel: false
-});
-
-
-
-$("#radioset").buttonset();
-
-
-
-$("#controlgroup").controlgroup();
-
-
-
-$("#tabs").tabs();
-
-
-
-$("#dialog").dialog({
-    autoOpen: false,
-    width: 400,
-    buttons: [
-        {
-            text: "Ok",
-            click: function () {
-                $(this).dialog("close");
-            }
-        },
-        {
-            text: "Cancel",
-            click: function () {
-                $(this).dialog("close");
-            }
-        }
-    ]
-});
-
-// Link to open the dialog
-$("#dialog-link").click(function (event) {
-    $("#dialog").dialog("open");
-    event.preventDefault();
-});
-
-
-
-$("#datepicker").datepicker({
-    inline: true
-});
-
-
-
-$("#slider").slider({
-    range: true,
-    values: [17, 67]
-});
-
-
-
-$("#progressbar").progressbar({
-    value: 20
-});
-
-
-
-$("#spinner").spinner();
-
-
-
-$("#menu").menu();
-
-
-
-$("#tooltip").tooltip();
-
-
-
-$("#selectmenu").selectmenu();
-
-
-// Hover states on the static widgets
-$("#dialog-link, #icons li").hover(
-        function () {
-            $(this).addClass("ui-state-hover");
-        },
-        function () {
-            $(this).removeClass("ui-state-hover");
-        }
-);
-
-/*IE MAIN_MENU_LEFT*/
-
+/*  
+ *  ###########################################################
+ *                       IE MAIN_MENU_LEFT
+ *  ###########################################################
+ */
 startList = function () {
     if (document.all && document.getElementById) {
         navRoot = document.getElementById("nav");
@@ -271,7 +130,12 @@ startList = function () {
 }
 window.onload = startList;
 
-/* GRÁFICO DO GOOGLE CHARS*/
+/*  
+ *  ###########################################################
+ *                  GRÁFICO DO GOOGLE CHARS
+ *  ###########################################################
+ */
+
 google.charts.load('current', {'packages': ['corechart']});
 google.charts.setOnLoadCallback(drawChart);
 function drawChart() {
@@ -314,3 +178,23 @@ $(function () {
         icon.closest(".portlet").find(".portlet-content").toggle();
     });
 });
+/*  
+ *  #################################################################
+ *  CLIQUE PARA ESCOLHER O TIPO DE CLIENTE: PESSOA FÍSICA OU JURÍDICA
+ *  #################################################################
+ */
+$(document).ready(function () {
+    $(".pf").click(function () {
+        $("#pj").hide();
+    });
+
+    $(".pj").click(function () {
+        $("#pf").hide();
+    });
+});
+
+/*  
+ *  ###########################################################
+ *  
+ *  ###########################################################
+ */

@@ -4,7 +4,7 @@
 define('HOST', 'localhost');
 define('USER', 'root');
 define('PASS', '123');
-define('DBSA', 'SisProvedor');
+define('DBSA', 'wsphp');
 
 // AUTO LOAD DE CLASSES ####################
 function __autoload($Class) {
@@ -52,3 +52,4 @@ function PHPErro($ErrNo, $ErrMsg, $ErrFile, $ErrLine) {
 }
 
 set_error_handler('PHPErro');
+

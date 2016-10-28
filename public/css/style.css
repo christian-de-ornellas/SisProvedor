@@ -25,10 +25,18 @@ html, body{
     font-family: 'Ubuntu', sans-serif;
 }
 
+a:focus{outline: none!important;}
+button:focus{outline: none!important;}
+
 /*BOX*/
 .container{float:left; width: 100%;}
 .content{display: block; margin: 0 auto; padding: 6% 1%;  width: 100%; max-width: 75.000em;}
 .clear{clear: both;}
+
+.title-bg{background-color: tomato; color: brown;}
+
+
+li #prox, #prox1, #prox2, #prox3, #ant, #ant1, #ant2, #ant3{color: #fff!important;}
 /*Topo*/
 .main_header{
     display: block;
@@ -82,6 +90,7 @@ html, body{
     height: 90px;
     border-radius: 100%; 
     border: solid 4px #2b3b4b;
+    background-color: rgba(1,1,1,0.20);    
 }
 .main_menu_left img:hover{
     border: solid 2px #1b2938;
@@ -90,7 +99,7 @@ html, body{
 }
 /*Perfil com foto e apresentação*/
 .perfil{padding: 10px 10px;  text-align: center;}
-.main_perfil{background-color: #182939; padding: 14px 15px; text-align: center;}
+.main_perfil{ padding: 14px 15px; text-align: center; background-color: #1b2938;}
 /*Menu lateral*/
 .main_menu_left ul{
     width: 100%;
@@ -131,7 +140,7 @@ html, body{
 }
 /*rodape*/
 .main_footer .content{
-    width:85%;
+    width:100%;
     float: right; 
     color: #888;
     text-align: center;
@@ -140,11 +149,19 @@ html, body{
     margin: 0!important;
     padding: 0!important;
 }
+footer p{font-weight: 300; font-size: 0.9em;text-align: center; }
 /*PAINEL DASHBOARD TELA PRINCIPAL*/
-.main{ 
+
+/*
+*  ###################
+*   ESTE BOTÃO TRABALHA COM O JQUERY PARA OCULTAR O MENU LATERAL
+*  ###################
+*/
+.normal{ 
     float: right; 
     width: 85%; 
 }
+.oculto{float: left; width: 100%;}
 /*DASHBOARD PAINEL*/
 .main_dashboard{
     width: 400px; 
@@ -259,6 +276,8 @@ html, body{
     margin-top: 0.5em;
     text-align: right;
 }
+
+
 /*JQUERY UI*/
 .ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active, a.ui-button:active, .ui-button:active, .ui-button.ui-state-active:hover {
     border: none!important;
@@ -282,7 +301,7 @@ html, body{
 
 .itens{
     overflow-y: scroll;
-    height: 150px;
+    height: 200px;
 }
 /*GUIA DE ACESSO RÁPIDO*/
 .acesso-rapido header{
@@ -299,4 +318,10 @@ html, body{
 .acesso-rapido ul li a:hover{
     color: #2c3e50!important;
     transition: all linear 0.2s;
+}
+label{
+    margin: 0.4em 0;
+    max-width: 100%;
+    position: relative;
+    line-height: 40px;
 }

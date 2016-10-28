@@ -70,8 +70,17 @@ class Plan extends Crud {
         return $stmt->execute();
     }
 
+    public function UltimosPlanos() {
+        $sql = "SELECT * FROM $this->table ORDER BY id DESC;";
+        $stmt = DB::prepare($sql);
+        $stmt->execute();
+        return $stmt->fetchAll();
+    }
+
     public function update($id) {
         
     }
+
+ 
 
 }

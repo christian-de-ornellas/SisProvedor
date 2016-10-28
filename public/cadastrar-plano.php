@@ -1,45 +1,88 @@
 <?php include_once('header.php'); ?>
 <?php require_once('../controller/Config.inc.php'); ?>  
-<?php require_once('../model/Plan.php'); ?>  
-<div class="container">
-    <div class="content">		
-        <article class="main_panel">
-            <header><h2  title="Aqui você registra o novo cliente" alt="[Aqui você registra um novo cliente]"> Novo Plano</h2></header>
-            <div class="main_form">
-                <form action="" method="post">
-                    <!-- Dados Gerais -->
-                    <label><small>NOME DO PLANO:</small>
-                        <input type="text" class="form-100" name="groupname" placeholder="Premium, Master" title="Informe o nome do plano"/>
+<section class="container">
+    <div class="content">
+        <?php require_once('../model/Planos.php'); ?>  
+        <!-- 
+                      ###########################
+                           MENU DE INTERAÇÃO
+                      ###########################
+        --> 
+        <div class="box-100 painel-padrao nav-title">
+            <h3><i class="fa fa-retweet" aria-hidden="true"></i> Cadastrar Plano</h3>
+            <ul>
+                <li><a href="cadastrar-plano">Novo Plano /</a></li>
+                <li><a href="consultar-plano">Consultar Plano </a></li>                           
+            </ul> 
+        </div>  
+        <!-- 
+                         ####################################
+                            DADOS PARA INSERIR NA RADGROUP
+                         ####################################
+        -->
+        <article class="painel-header box-100 widget" id="tabs">
+            <header class="bg_orange"></header>
+            <ul>
+                <li><a href="#tabs-1">Detalhes</a></li>
+                <li><a href="#tabs-2">Valor</a></li>           
+            </ul>
+            <div id="tabs-1">
+                <form  method="post">
+                    <!-- 
+                       ####################################
+                       ########## DADOS DO PLANO ##########
+                       ####################################
+                    -->                              
+                    <label>
+                        <input type="text" class="sis-form box-50" name="groupname" placeholder="Nome do plano:" title="Nome do plano:" required/>                       
                     </label>
 
+                    <label>
+                        <input type="text" class="sis-form box-50" name="value" placeholder="Tamanho do plano:" title="Tamanho do plano:" required/>                       
+                    </label>                                       
 
-                    <label><small>CONEXÃO:</small>
-                        <input type="text" class="form-100" name="value" placeholder="ex: 1500k/1500k" title="Informe o tamanho" />
-                    </label>
-                    <!--<label><small>DOWNLOADS:</small>
-                    
-                            <input type="text" class="form-100" name="" placeholder="20022kb" title="Infome o número de downloads mensais"/>
-                    </label>
-                    <label><small>UPLOADS:</small>
-                            <input type="text" class="form-100" name="" placeholder="20050kb" title="Informe o número de uploads mensais"/>
-                    </label>-->
-
-                    <label><small>VALOR:</small>
-                        <input type="text" class="form-100" name="valor" placeholder="R$ 999,00" title="Informe o valor do plano"/>
-                    </label>
-
+            </div> 
+            <!-- 
+                       ####################################
+                       ######### VALOR DO PLANO ###########
+                       ####################################
+            --> 
+            <div id="tabs-2">
+                <label>
+                    <input type="text" class="sis-form box-50" name="valor" id="valor" placeholder="Valor do plano:" title="Valor do plano:" required/>                       
+                </label>
 
             </div>
-            <footer>
-                <button type="reset" name="" class="btn">Limpar <i class="fa fa-ban" aria-hidden="true"></i></button>
-                <button type="submit" name="save" class="btn">SALVAR <i class="fa fa-floppy-o" aria-hidden="true"></i></button>
-                <a href="create-client"><button type="submit" name="" class="btn">ADICIONAR <i class="fa fa-plus-square" aria-hidden="true"></i></button></a>
 
-                </form>	
+            <footer class="box-100">
+                <button type="reset" name="" class="sis-btn-vermelho box-20">Limpar <i class="fa fa-ban" aria-hidden="true"></i></button>
+                <button type="submit" name="save" class="sis-btn-verde box-20">SALVAR <i class="fa fa-floppy-o" aria-hidden="true"></i></button>                
+                </form>	               
             </footer>
         </article>
-    </div>
-    <div class="clear"></div>
-</div>
+        <!-- 
+                      ####################################
+                      ####### PLANOS CADASTRADOS ########
+                      ####################################
+        -->         
+        <div class="box-100 painel-padrao nav-title bg-silver">
+            <h3 class="fcolor_branco"><i class="fa fa-user" aria-hidden="true"></i> Planos cadastrados:</h3>           
+        </div>  
+        <article class="painel-header itens box-100">        
+            <table class="sis-table box-100">
+                <?php foreach ($Plan->UltimosPlanos() as $key => $ConsultPlan): ?>
+                    <tr>        
+                        <td><?= $ConsultPlan->groupname; ?></td>
+                        <td><?= $ConsultPlan->value; ?></td>
+                        <td><b>R$ <?= $ConsultPlan->valor; ?></b></td>  
+                    </tr>
+                <?php endforeach; ?>
+
+
+            </table>          
+        </article>
+
+</section>
+
 
 <?php include_once('footer.php'); ?>

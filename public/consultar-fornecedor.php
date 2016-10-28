@@ -3,14 +3,14 @@
 
 <section class="container">
     <div class="content">
-        <?php require_once('../model/Planos.php'); ?>
+        <?php require_once('../model/Fornecedor.php'); ?>
         <!-- 
                       ###########################
                            MENU DE INTERAÇÃO
                       ###########################
         --> 
         <div class="box-100 painel-padrao nav-title">
-            <h3><i class="fa fa-filter" aria-hidden="true"></i> Consultar Plano</h3>
+            <h3><i class="fa fa-filter" aria-hidden="true"></i> Consultar Fornecedor</h3>
             <ul>
                 <li><a href="cadastrar-plano">Novo Plano /</a></li>
                 <li><a href="consultar-plano">Consultar Plano </a></li>                           
@@ -30,17 +30,17 @@
             <table>
                 <tr>
 
-                    <th>Plano</th>
-                    <th>Tamanho</th>
-                    <th>Valor</th>
-                       
+                    <th>Nome fantasia</th>
+                    <th>Cnpj</th>
+                    <th>E-mail</th>
+
                 </tr>
-                <?php foreach ($Plan->findAll() as $key => $ConsultPlanos): ?>
+                <?php foreach ($Fornecedor->findAll() as $key => $buscarFornecedor): ?>
                     <tr>
-                        <td><?= $ConsultPlanos->groupname; ?></td>                        
-                        <td><?= $ConsultPlanos->value; ?></td>                        
-                        <td><?= $ConsultPlanos->valor; ?></td>                       
-                        <td><div id="progressbar"></div></td>                       
+                        <td><?= $buscarFornecedor->nome_fantasia; ?></td>                        
+                        <td><?= $buscarFornecedor->cnpj; ?></td>                        
+                        <td><?= $buscarFornecedor->email; ?></td>                       
+                        <td></td>                       
                     </tr>
                 <?php endforeach; ?>
             </table>

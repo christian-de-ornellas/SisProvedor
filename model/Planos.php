@@ -13,7 +13,7 @@ if (isset($_POST["save"])):
     $op = "==";
     $value = strip_tags(trim($_POST["value"]));
     $valor = strip_tags(trim($_POST["valor"]));
-
+   
     //Aqui eu seto os Objetos
     $Plan->setGroupname($groupname);
     $Plan->setAttribute($attribute);
@@ -23,9 +23,9 @@ if (isset($_POST["save"])):
 
     // Aqui eu mando salvar os dados 
     if ($Plan->insert()) {
-        echo "<div class='success'>Parabéns, o plano {$groupname} foi salvo com sucesso</div>";
+        echo "<script> alert('Plano salvo com sucesso!'); </script>";
     } else {
-        echo "<div class='error'>Desculpe, Ocerreu um erro e plano {$groupname} não foi salvo!</div>";
+        trigger_error("<b>Erro ao salvar o arquivo</b> {$e->getMenssage()}", $e->getCode());
     }
     
     
